@@ -2,8 +2,8 @@
 using namespace std;
 
 #define int long long int
-#define INT_MAX LONG_LONG_MAX
-#define INT_MIN LONG_LONG_MIN
+#define INF LONG_LONG_MAX
+#define NEG_INF LONG_LONG_MIN
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
@@ -16,8 +16,31 @@ int modpow(int, int);
 
 
 void solution() {
-
-    
+    int n;
+    cin >> n;
+    vector<int> H(n);
+    for(int i = 0; i < n; ++i) {
+        cin >> H[i];
+    }
+    sort(all(H));
+    int minDiff = INF;
+    int minIdx;
+    for(int i = 0; i < n-1; ++i) {
+        if(H[i+1]-H[i] < minDiff) {
+            minDiff = H[i+1]-H[i];
+            minIdx = i;
+        }
+        if(minDiff == 0)
+            break;
+    }
+    cout << H[minIdx] << " ";
+    for(int i = minIdx+2; i < n; ++i){
+        cout << H[i] << " ";
+    }
+    for(int i = 0; i < minIdx; ++i)
+        cout << H[i] << " ";
+    cout << H[minIdx+1];
+    cout << "\n";   
 
 }
 

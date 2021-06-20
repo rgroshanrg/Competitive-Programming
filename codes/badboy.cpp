@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define int long long int
-#define INT_MAX LONG_LONG_MAX
-#define INT_MIN LONG_LONG_MIN
+#define INF LONG_LONG_MAX
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '/n'
-
 const int MOD = 1'000'000'007;
-
 void swap(int &, int &);
 int modpow(int, int);
 
+int dist(int a, int b, int c, int d) {
+    return (abs(a-c) + abs(b-d));
+}
 
 void solution() {
+    int n, m, i, j;
+    cin >> n >> m >> i >> j;
 
-    
-
+    cout << n << " " << 1 << " " << 1 << " " << m << "\n";
 }
 
 int32_t main() {
@@ -29,7 +28,6 @@ int32_t main() {
     while(_--) {
         solution();
     }
-
     return 0;
 }
 

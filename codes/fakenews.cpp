@@ -1,35 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define int long long int
-#define INT_MAX LONG_LONG_MAX
-#define INT_MIN LONG_LONG_MIN
+#define INF LONG_LONG_MAX
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '/n'
-
 const int MOD = 1'000'000'007;
-
 void swap(int &, int &);
 int modpow(int, int);
 
 
-void solution() {
-
-    
-
+int solution() {
+    string s;
+    cin >> s;
+    string t = "heidi";
+    int count = 0;
+    for(int i = 0; i < s.length(); ++i) {
+        if(count > 4) 
+            return true;
+        if(t[count] == s[i])
+            count++;
+    }
+    if(count > 4)
+        return true;
+    return false;
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-
-    int _;
-    cin >> _;
-    while(_--) {
-        solution();
-    }
-
+    bool _ = solution();
+    if(_)
+        cout << "YES";
+    else 
+        cout << "NO";
     return 0;
 }
 

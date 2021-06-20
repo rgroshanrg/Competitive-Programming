@@ -1,21 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define int long long int
-#define INT_MAX LONG_LONG_MAX
-#define INT_MIN LONG_LONG_MIN
+#define INF LONG_LONG_MAX
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '/n'
-
 const int MOD = 1'000'000'007;
-
 void swap(int &, int &);
 int modpow(int, int);
 
+string flipCoins(int N, string s){
+        // Your code goes here
+        int n = N;
+        for(int i = 1; i < n; ++i) {
+            if(s[i-1] == '0' && s[i] == '0') {
+                s[i-1] = s[i] = 1;
+            }
+        }
+        int count = 0;
+        for(int i = 0; i < n; ++i) {
+            if(s[i] == '0') 
+                count++;
+        }
+        if(count & 1)
+            return "NO";
+        return "YES";
+    }
 
 void solution() {
+    int n, m, x, y, z, i, j, k;
+    // My Code here
+    cin >> n;
+    string s;
+    cin >> s;
+    cout << flipCoins(n, s);
+
 
     
 
@@ -24,12 +43,7 @@ void solution() {
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-    int _;
-    cin >> _;
-    while(_--) {
-        solution();
-    }
-
+    solution();
     return 0;
 }
 

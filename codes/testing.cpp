@@ -18,6 +18,7 @@ void solution() {
     int n, m, x, y, z, i, j, k;
 
     // My Code here
+    cout << -5291 % 10;
 
 }
 
