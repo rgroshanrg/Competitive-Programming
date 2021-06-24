@@ -7,7 +7,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '\n'
+#define endl '/n'
 
 const int MOD = 1'000'000'007;
 
@@ -17,7 +17,25 @@ int modpow(int, int);
 
 void solution() {
 
-    
+    int n, l, r;
+    cin >> n >> l >> r;
+    vector<int> arr(n);
+    for(int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+    // unordered_set<int> set;
+    int count = 0;
+    sort(arr.begin(), arr.end());
+
+    for(int i = 0; i < n; i++) {
+        count += upper_bound(arr.begin(), arr.end(), r - arr[i]) - arr.begin();
+        count -= lower_bound(arr.begin(), arr.end(), l - arr[i]) - arr.begin();
+        if(l <= 2 * arr[i] && 2 * arr[i] <= r) {
+            count--;
+        }
+    }
+    count >>= 1;
+    cout << count << "\n";
     
 }
 
@@ -29,8 +47,6 @@ int32_t main() {
     while(_--) {
         solution();
     }
-
-    // solution();
 
     return 0;
 }

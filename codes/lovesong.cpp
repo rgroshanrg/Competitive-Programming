@@ -7,7 +7,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '\n'
+#define endl '/n'
 
 const int MOD = 1'000'000'007;
 
@@ -17,20 +17,29 @@ int modpow(int, int);
 
 void solution() {
 
-    
+    int n, q;
+    cin >> n >> q;
+    string s;
+    cin >> s;
+    vector<int> arr(n+1); arr[0] = 0;
+    for(int i = 1; i <= n; ++i)
+        arr[i] = arr[i-1] + (int)s[i-1] - 96;
+    while(q--) {
+        int l, r;
+        cin >> l >> r;
+        cout << arr[r] - arr[l-1] << "\n";
+    }
     
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-
-    int _;
-    cin >> _;
-    while(_--) {
-        solution();
-    }
-
-    // solution();
+    solution();
+    // int _;
+    // cin >> _;
+    // while(_--) {
+    //     solution();
+    // }
 
     return 0;
 }

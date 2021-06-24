@@ -7,7 +7,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
-#define endl '\n'
+#define endl '/n'
 
 const int MOD = 1'000'000'007;
 
@@ -17,6 +17,17 @@ int modpow(int, int);
 
 void solution() {
 
+    int n, x, t;
+    cin >> n >> x >> t;
+    int ans = 0;
+    if(t < x)
+        ans = 0;
+    else if(t/x > n) {
+        ans = ((n*(n-1)) >> 1);
+    } else {
+        ans =  (t/x)*n - (((t/x) * ((t/x)+1)) >> 1);
+    }
+    cout << ans << "\n";
     
     
 }
@@ -29,8 +40,6 @@ int32_t main() {
     while(_--) {
         solution();
     }
-
-    // solution();
 
     return 0;
 }
