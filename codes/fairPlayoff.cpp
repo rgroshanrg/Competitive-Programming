@@ -2,8 +2,8 @@
 using namespace std;
 
 #define int long long int
-#define LL_MAX LONG_LONG_MAX
-#define LL_MIN LONG_LONG_MIN
+#define INT_MAX LONG_LONG_MAX
+#define INT_MIN LONG_LONG_MIN
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
@@ -17,11 +17,18 @@ int modpow(int, int);
 
 void solution() {
 
-    
+    vector<int> arr(4);
+    for(int i = 0; i < 4; ++i)
+        cin >> arr[i];
+    int f = max(arr[0], arr[1]);
+    int s = max(arr[2], arr[3]);
+    sort(all(arr));
+    if((f == arr[2] && s == arr[3])  ||  (f == arr[3] && s == arr[2]))
+        cout << "YES\n";
+    else
+        cout << "NO\n";
     
 }
-
-// This Code is written by : https://codeforces.com/profile/rgroshanrg 
 
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);

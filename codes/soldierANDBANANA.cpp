@@ -2,8 +2,8 @@
 using namespace std;
 
 #define int long long int
-#define LL_MAX LONG_LONG_MAX
-#define LL_MIN LONG_LONG_MIN
+#define INT_MAX LONG_LONG_MAX
+#define INT_MIN LONG_LONG_MIN
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
@@ -17,7 +17,19 @@ int modpow(int, int);
 
 void solution() {
 
-    
+    int x;
+    cin >> x;
+    int cnt = 0;
+    cnt += x/5;
+    x = x%5;
+    cnt += x/4;
+    x = x%4;
+    cnt += x/3;
+    x = x%3;
+    cnt += x/2;
+    x = x%2;
+    cnt += x;
+    cout << cnt;
     
 }
 
@@ -26,13 +38,13 @@ void solution() {
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-    int _;
-    cin >> _;
-    while(_--) {
-        solution();
-    }
+    // int _;
+    // cin >> _;
+    // while(_--) {
+    //     solution();
+    // }
 
-    // solution();
+    solution();
 
     return 0;
 }

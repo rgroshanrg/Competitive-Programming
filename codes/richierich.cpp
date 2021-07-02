@@ -14,11 +14,21 @@ const int MOD = 1'000'000'007;
 void swap(int &, int &);
 int modpow(int, int);
 
+bool isPwr2(int n) {
+   if(n==0)
+   return false; 
+   return (ceil(log2(n)) == floor(log2(n)));
+}
 
 void solution() {
-
+    int a, b;
+    cin >> a >> b;
     
-    
+    if(isPwr2(b))
+        cout << "Yes\n";
+    else
+        cout << "No\n";
+    // cout<<(to_string((long double)2/3));
 }
 
 // This Code is written by : https://codeforces.com/profile/rgroshanrg 

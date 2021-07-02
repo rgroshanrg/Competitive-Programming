@@ -2,8 +2,8 @@
 using namespace std;
 
 #define int long long int
-#define LL_MAX LONG_LONG_MAX
-#define LL_MIN LONG_LONG_MIN
+#define INT_MAX LONG_LONG_MAX
+#define INT_MIN LONG_LONG_MIN
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
@@ -17,7 +17,33 @@ int modpow(int, int);
 
 void solution() {
 
-    
+    int n;
+    cin >> n;
+    vector<int> arr(n+1);
+    map<int, int> map;
+    for(int i = 1; i <= n; ++i) {
+        cin >> arr[i];
+        map[arr[i]] = i;
+    }
+    int cnt = 0;
+    for(int i = 1; i <= n; ++i) {
+        map.erase(arr[i]);
+        for(auto &p : map) {
+            if(p.first*arr[i] >= 2*n)
+                break;
+            if(p.first*arr[i] == p.second+i) {
+                cnt++;
+                // cout << "( " << i << ", " << p.second << ")\t";
+            }
+        }
+    }
+    // for(int i = 1; i <= n; ++i) {
+    //     for(int j = i+1; j <= n; ++j) {
+    //         if(arr[i]*arr[j] == i+j)
+    //             cnt++;
+    //     }
+    // }
+    cout << cnt << "\n";
     
 }
 

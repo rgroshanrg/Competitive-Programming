@@ -2,8 +2,8 @@
 using namespace std;
 
 #define int long long int
-#define LL_MAX LONG_LONG_MAX
-#define LL_MIN LONG_LONG_MIN
+#define INT_MAX LONG_LONG_MAX
+#define INT_MIN LONG_LONG_MIN
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define PI 3.1415926535897932384626
@@ -14,11 +14,29 @@ const int MOD = 1'000'000'007;
 void swap(int &, int &);
 int modpow(int, int);
 
-
 void solution() {
-
-    
-    
+    int n, k;
+    cin >> n >> k;
+    vector<int> arr(n);
+    for(int i = 0; i < n; ++i)
+        cin >> arr[i];
+    // sort(all(arr), greater<int>());
+    int cnt = 0;
+    for(int i = 0; i < n; ++i) {
+        if(arr[i] >= k) {
+            cnt += arr[i]/k;
+            arr[i] %= k;
+        }
+    }
+    for(int i = 0; i < n; ++i) {
+        if(arr[i] != 0)
+            cnt++;
+    }
+    // cout << cnt;
+    if(cnt & 1)
+        cout << (cnt >> 1) + 1;
+    else
+        cout << (cnt >> 1);
 }
 
 // This Code is written by : https://codeforces.com/profile/rgroshanrg 
@@ -26,13 +44,13 @@ void solution() {
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-    int _;
-    cin >> _;
-    while(_--) {
-        solution();
-    }
+    // int _;
+    // cin >> _;
+    // while(_--) {
+    //     solution();
+    // }
 
-    // solution();
+    solution();
 
     return 0;
 }
