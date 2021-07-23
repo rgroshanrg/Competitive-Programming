@@ -10,12 +10,17 @@ using namespace std;
 #define PI      3.1415926535897932384626
 #define vi      vector<int>
 #define vii     vector<vector<int>>
-#define pii     pair<int, int>
+#define pi      pair<int, int>
 #define uset    unordered_set
 #define umap    unordered_map
-#define pb      emplace_back
+#define pb      push_back
 #define endl    '\n'
+
+#ifndef ONLINE_JUDGE
 #define debug(x) cout << #x << " -> " << x << "\n";
+#else
+#define debug(...)
+#endif
 
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
