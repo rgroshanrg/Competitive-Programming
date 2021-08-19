@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define int     long long int
 #define LL_MAX  LONG_LONG_MAX
 #define LL_MIN  LONG_LONG_MIN
@@ -9,47 +9,66 @@ using namespace std;
 #define clr(x)  memset(x, 0, sizeof(x))
 #define PI      3.1415926535897932384626
 #define vi      vector<int>
-#define vii     vector<vector<int>>
+#define vvi     vector<vector<int>>
+#define vpi     vector<pair<int, int>>
 #define pi      pair<int, int>
 #define uset    unordered_set
 #define umap    unordered_map
 #define pb      push_back
 #define endl    '\n'
-
+ 
+#define fo(i, n) for(int i = 0; i < n; ++i)
+ 
 #ifndef ONLINE_JUDGE
 #define debug(x) cout << #x << " -> " << x << "\n";
 #else
 #define debug(...)
 #endif
-
-
+ 
+struct hash_pair { template <class T1, class T2> size_t operator()(const pair<T1, T2>& p) const  { auto h1 = hash<T1>{}(p.first); auto h2 = hash<T2>{}(p.second); return h1 ^ h2; } };
+ 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
-
+ 
 const int MOD = 1'000'000'007;
 int modpow(int, int);
+ 
+bool isPwr2(int n) { return __builtin_popcountll(n) == 1; }
 
-
-void solution() {
-
-
-
+bool cmp(int &a, int &b, int &c) {
+    return abs(a-b) <= abs(b-c);
 }
 
+void solution() {
+ 
+    int n; cin >> n;
+    vi arr(n);
+    fo(i, n)
+        cin >> arr[i];
+    
+    sort(all(arr), cmp);
 
+    fo(i, n)
+        cout << arr[i] << " ";
+    cout << "\n";
+
+}
+ 
+ 
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0);
-
-    int _;
+    int _ = 1;
+ 
+ 
     cin >> _;
+ 
+
     while(_--) {
         solution();
     }
-
-    // solution();
-
+ 
     return 0;
 }
-
+ 
 int modpow(int base, int exp) {
     base %= MOD;
     int result = 1;
@@ -60,4 +79,3 @@ int modpow(int base, int exp) {
     }
     return result;
 }
-
