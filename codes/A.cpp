@@ -18,6 +18,7 @@ using namespace std;
 #define endl    '\n'
  
 #define fo(i, n) for(int i = 0; i < n; ++i)
+#define foo(i, a, n) for(int i = a; i < n; ++i)
  
 #ifndef ONLINE_JUDGE
 #define debug(x) cout << #x << " -> " << x << "\n";
@@ -31,33 +32,24 @@ struct hash_pair { template <class T1, class T2> size_t operator()(const pair<T1
  
 const int MOD = 1'000'000'007;
 int modpow(int, int);
- 
+
 bool isPwr2(int n) { return __builtin_popcountll(n) == 1; }
 
-bool cmp(int &a, int &b, int &c) {
-    return abs(a-b) <= abs(b-c);
-}
-
 void solution() {
- 
-    int n; cin >> n;
-    vi arr(n);
-    fo(i, n)
-        cin >> arr[i];
     
-    sort(all(arr), cmp);
-
-    fo(i, n)
-        cout << arr[i] << " ";
-    cout << "\n";
+    int a, b; cin >> a >> b;
+    if(a < b)
+        swap(a, b);
+    
+    cout << min({(a+b)/4, a, b}) << "\n";
 
 }
- 
- 
+
+
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0);
     int _ = 1;
- 
+    
  
     cin >> _;
  
